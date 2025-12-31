@@ -91,6 +91,14 @@ img {
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.header.is-scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header-inner {
@@ -314,8 +322,36 @@ img {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.section {
-    animation: fadeIn 0.6s ease-out;
+/* ============================================
+   Scroll Animations (Intersection Observer)
+   ============================================ */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 活動内容リストのスタガーアニメーション */
+.activities li {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.activities li.is-visible {
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* ============================================
