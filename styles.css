@@ -111,16 +111,21 @@ img {
    ============================================ */
 .hero {
     background: var(--c-white);
+    width: 100%;
 }
 
 .hero-image {
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0;
 }
 
 .hero-image img {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    display: block;
 }
 
 /* ============================================
