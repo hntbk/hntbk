@@ -1,333 +1,290 @@
-/* Reset and base styles */
-* {
+/* ============================================
+   Design System
+   ============================================ */
+:root {
+    /* Colors - ロゴから抽出したパレット */
+    --c-primary: #e85a2c;      /* オレンジ（ロゴの赤丸） */
+    --c-secondary: #4a9b4a;    /* 緑（ロゴの緑文字） */
+    --c-accent: #f5a623;       /* 黄（アクセント） */
+
+    --c-text: #2d2d2d;
+    --c-text-muted: #5a5a5a;
+    --c-text-light: #888;
+
+    --c-bg: #faf9f7;
+    --c-bg-alt: #f5f3ef;
+    --c-white: #fff;
+
+    /* Typography */
+    --font-base: 'Noto Sans JP', sans-serif;
+    --fs-xs: 0.8125rem;   /* 13px */
+    --fs-sm: 0.875rem;    /* 14px */
+    --fs-base: 1rem;      /* 16px */
+    --fs-lg: 1.125rem;    /* 18px */
+    --fs-xl: 1.5rem;      /* 24px */
+    --fs-2xl: 2rem;       /* 32px */
+
+    --lh-tight: 1.4;
+    --lh-base: 1.8;
+    --lh-loose: 2;
+
+    /* Spacing - 8px grid */
+    --sp-1: 0.5rem;   /* 8px */
+    --sp-2: 1rem;     /* 16px */
+    --sp-3: 1.5rem;   /* 24px */
+    --sp-4: 2rem;     /* 32px */
+    --sp-5: 2.5rem;   /* 40px */
+    --sp-6: 3rem;     /* 48px */
+    --sp-8: 4rem;     /* 64px */
+    --sp-10: 5rem;    /* 80px */
+
+    /* Effects */
+    --shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: url('images/background.jpg') center center/cover no-repeat fixed;
-    min-height: 100vh;
-    position: relative;
+    font-family: var(--font-base);
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: var(--c-text);
+    background-color: var(--c-bg);
+    -webkit-font-smoothing: antialiased;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: -1;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
+/* ============================================
+   Layout
+   ============================================ */
 .container {
-    max-width: 1200px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--sp-3);
 }
 
-/* Header */
+/* ============================================
+   Header
+   ============================================ */
 .header {
-    text-align: center;
-    padding: 40px 0;
-    margin-bottom: 40px;
+    background: var(--c-white);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.logo-container {
-    margin-bottom: 20px;
+.header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--sp-2) var(--sp-3);
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
-    max-width: 400px;
-    height: auto;
+    height: 48px;
+    width: auto;
+    mix-blend-mode: multiply;
 }
 
-.main-title {
-    font-size: 2rem;
-    font-weight: 400;
-    color: #333;
-    margin: 0;
+/* ============================================
+   Hero - メインビジュアル
+   ============================================ */
+.hero {
+    background: var(--c-white);
 }
 
-/* Main content */
-.main-content {
-    padding: 0;
-}
-
-/* Hero section */
-.hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    padding: 40px 20px;
-}
-
-.hero-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.opening-info {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.opening-title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 25px;
-    line-height: 1.4;
-}
-
-.opening-description {
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 0;
-}
-
-/* Kanban section */
-.kanban-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 40px;
-}
-
-.kanban-container {
+.hero-image {
     max-width: 900px;
     margin: 0 auto;
 }
 
-.kanban-image {
-    max-width: 100%;
+.hero-image img {
+    width: 100%;
     height: auto;
 }
 
-/* Footer */
+/* ============================================
+   News - お知らせ
+   ============================================ */
+.news-list {
+    list-style: none;
+}
+
+.news-item {
+    padding: var(--sp-3) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.news-item:first-child {
+    padding-top: 0;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.news-date {
+    display: block;
+    font-size: var(--fs-sm);
+    color: var(--c-text-light);
+    margin-bottom: var(--sp-1);
+}
+
+.news-text {
+    color: var(--c-text-muted);
+    line-height: var(--lh-base);
+}
+
+/* ============================================
+   Section - 共通セクション
+   ============================================ */
+.section {
+    padding: var(--sp-8) 0;
+    background: var(--c-white);
+}
+
+.section--alt {
+    background: var(--c-bg-alt);
+}
+
+.section-title {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--c-text);
+    margin-bottom: var(--sp-4);
+    padding-left: var(--sp-2);
+    border-left: 4px solid var(--c-secondary);
+}
+
+.section-text {
+    color: var(--c-text-muted);
+    line-height: var(--lh-loose);
+    margin-bottom: var(--sp-2);
+}
+
+.section-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Activities - 活動内容リスト
+   ============================================ */
+.activities {
+    list-style: none;
+}
+
+.activities li {
+    position: relative;
+    padding: var(--sp-2) 0;
+    padding-left: var(--sp-4);
+    color: var(--c-text-muted);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.activities li:last-child {
+    border-bottom: none;
+}
+
+.activities li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--c-secondary);
+    border-radius: 50%;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
 .footer {
+    background: var(--c-text);
+    color: var(--c-text-light);
+    padding: var(--sp-4) 0;
     text-align: center;
-    padding: 30px 0;
-    margin-top: 40px;
 }
 
 .footer p {
-    color: #666;
-    font-size: 0.9rem;
+    font-size: var(--fs-xs);
 }
 
-/* Responsive design */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 95%;
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 640px) {
+    :root {
+        --fs-lg: 1rem;
+        --fs-xl: 1.25rem;
     }
-    
+
+    .header-inner {
+        padding: var(--sp-2);
+    }
+
     .logo {
-        max-width: 350px;
+        height: 40px;
+    }
+
+    .announcement {
+        padding: var(--sp-4) 0;
+    }
+
+    .announcement-lead {
+        font-size: var(--fs-base);
+    }
+
+    .section {
+        padding: var(--sp-6) 0;
+    }
+
+    .section-title {
+        font-size: var(--fs-lg);
+        margin-bottom: var(--sp-3);
+    }
+
+    .activities li {
+        font-size: var(--fs-sm);
+        padding: var(--sp-2) 0 var(--sp-2) var(--sp-3);
+    }
+
+    .activities li::before {
+        width: 8px;
+        height: 8px;
     }
 }
 
-@media (max-width: 992px) {
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .opening-title {
-        font-size: 1.4rem;
-    }
-    
-    .logo {
-        max-width: 320px;
-    }
+/* ============================================
+   Animation
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-    
-    .header {
-        padding: 25px 0;
-    }
-    
-    .hero-section {
-        padding: 35px 15px;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .opening-title {
-        font-size: 1.3rem;
-    }
-    
-    .opening-description {
-        font-size: 1rem;
-    }
-    
-    .kanban-section {
-        padding: 30px 15px;
-    }
-    
-    .logo {
-        max-width: 300px;
-    }
+.section {
+    animation: fadeIn 0.6s ease-out;
 }
-
-@media (max-width: 576px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .header {
-        padding: 20px 0;
-    }
-    
-    .hero-section {
-        padding: 30px 10px;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .opening-title {
-        font-size: 1.2rem;
-    }
-    
-    .opening-description {
-        font-size: 0.95rem;
-    }
-    
-    .kanban-section {
-        padding: 25px 10px;
-    }
-    
-    .logo {
-        max-width: 280px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-    }
-    
-    .header {
-        padding: 15px 0;
-    }
-    
-    .hero-section {
-        padding: 25px 8px;
-    }
-    
-    .hero-title {
-        font-size: 1.6rem;
-    }
-    
-    .opening-title {
-        font-size: 1.1rem;
-    }
-    
-    .opening-description {
-        font-size: 0.9rem;
-    }
-    
-    .kanban-section {
-        padding: 20px 8px;
-    }
-    
-    .logo {
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 360px) {
-    .container {
-        padding: 0 8px;
-    }
-    
-    .header {
-        padding: 12px 0;
-    }
-    
-    .hero-section {
-        padding: 20px 5px;
-    }
-    
-    .hero-title {
-        font-size: 1.4rem;
-    }
-    
-    .opening-title {
-        font-size: 1rem;
-    }
-    
-    .opening-description {
-        font-size: 0.85rem;
-    }
-    
-    .kanban-section {
-        padding: 15px 5px;
-    }
-    
-    .logo {
-        max-width: 220px;
-    }
-}
-
-/* 横画面（ランドスケープ）対応 */
-@media (max-height: 500px) and (orientation: landscape) {
-    .header {
-        padding: 15px 0;
-    }
-    
-    .hero-section {
-        padding: 20px 15px;
-    }
-    
-    .kanban-section {
-        padding: 15px 15px;
-    }
-    
-    .logo {
-        max-width: 200px;
-    }
-}
-
-/* 高解像度ディスプレイ対応 */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .logo, .kanban-image {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
-}
-
-/* Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-content {
-    animation: fadeInUp 1s ease-out;
-} 

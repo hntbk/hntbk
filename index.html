@@ -14,39 +14,73 @@
     <meta name="twitter:image" content="images/kanban.jpg">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo-container">
-                <img src="images/logo.png" alt="ひなたぼっこ倶楽部ロゴ" class="logo">
+    <header class="header">
+        <div class="header-inner">
+            <img src="images/logo.png" alt="ひなたぼっこ倶楽部" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: 看板画像をメインビジュアルに -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="images/kanban.jpg" alt="ひなたぼっこ倶楽部 看板" >
             </div>
-            </header>
-        
-        <main class="main-content">
-            <section class="hero-section">
-                <div class="hero-content">
-                    <div class="opening-info">
-                        <h3 class="opening-title">ひなたぼっこ倶楽部OPEN ！2025/07/07</h3>
-                        <p class="opening-description">
-                            やさしくゆるやかなつながりで、<br>
-                            いろんなことを楽しむクラブとして、<br>
-                            令和７年7月7日（月）午前7時7分にオープンします!😄
-                        </p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="kanban-section">
-                <div class="kanban-container">
-                    <img src="images/kanban.jpg" alt="ひなたぼっこ倶楽部 看板" class="kanban-image">
-                </div>
-            </section>
-        </main>
-        
-        <footer class="footer">
-            <p>&copy; 2025 ひなたぼっこ倶楽部. All rights reserved.</p>
-        </footer>
-    </div>
-    
+        </section>
+
+        <!-- News -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">お知らせ</h2>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <time class="news-date">2025.07.07</time>
+                        <p class="news-text">やさしくゆるやかなつながりで、いろんなことを楽しむクラブとして、令和7年7月7日（月）午前7時7分にオープンしました。</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">ひなたぼっこ倶楽部について</h2>
+                <p class="section-text">
+                    私たちは、地域のコミュニティ活動を応援する一般社団法人です。
+                </p>
+                <p class="section-text">
+                    さまざまな個性を持つ人々が、活動を通じてお互いを尊重し、
+                    共に響き合い、共に奏でる——そんな「共奏」の実現を目指しています。
+                </p>
+                <p class="section-text">
+                    地域社会がもっと豊かに、もっと楽しくなるように。<br>
+                    ひなたぼっこ倶楽部は、みなさんと一緒に歩んでいきます。
+                </p>
+            </div>
+        </section>
+
+        <!-- Activities -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">活動内容</h2>
+                <ul class="activities">
+                    <li>コミュニティ活動に関する情報収集・調査・研究</li>
+                    <li>人と人をつなぐコミュニティ技術の研究・開発・普及</li>
+                    <li>学習会・講習会・ワークショップ・セミナーなどの開催</li>
+                    <li>自然農法による野菜や果物の生産・加工</li>
+                    <li>音楽やアート作品の制作・発表・展示・販売</li>
+                    <li>その他、みんなで楽しむさまざまな活動</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 一般社団法人ひなたぼっこ倶楽部</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
