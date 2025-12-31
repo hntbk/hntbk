@@ -286,14 +286,6 @@ img {
         height: 40px;
     }
 
-    .announcement {
-        padding: var(--sp-4) 0;
-    }
-
-    .announcement-lead {
-        font-size: var(--fs-base);
-    }
-
     .section {
         padding: var(--sp-6) 0;
     }
@@ -324,4 +316,23 @@ img {
 
 .section {
     animation: fadeIn 0.6s ease-out;
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+*:focus-visible {
+    outline: 2px solid var(--c-secondary);
+    outline-offset: 2px;
+}
+
+/* アニメーション軽減設定を尊重 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
