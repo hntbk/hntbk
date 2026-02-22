@@ -174,9 +174,34 @@ img {
     margin-bottom: var(--sp-1);
 }
 
+.news-content {
+    margin-top: var(--sp-1);
+}
+
+.news-title {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--c-text);
+    margin-bottom: var(--sp-1);
+}
+
+.news-meta {
+    font-size: var(--fs-sm);
+    color: var(--c-secondary);
+    font-weight: 500;
+    margin-bottom: var(--sp-2);
+}
+
 .news-text {
     color: var(--c-text-muted);
     line-height: var(--lh-base);
+}
+
+.news-tagline {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-sm);
+    color: var(--c-primary);
+    font-weight: 500;
 }
 
 /* ============================================
@@ -346,6 +371,14 @@ img {
 
     .info-item dt {
         width: auto;
+    }
+
+    .news-title {
+        font-size: var(--fs-base);
+    }
+
+    .news-meta {
+        font-size: var(--fs-xs);
     }
 }
 
