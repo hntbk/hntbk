@@ -204,6 +204,26 @@ img {
     font-weight: 500;
 }
 
+.news-cta {
+    margin-top: var(--sp-3);
+}
+
+.news-cta a {
+    display: inline-block;
+    padding: var(--sp-1) var(--sp-3);
+    background: var(--c-secondary);
+    color: var(--c-white);
+    text-decoration: none;
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background var(--transition);
+}
+
+.news-cta a:hover {
+    background: #3d8340;
+}
+
 /* ============================================
    Section - 共通セクション
    ============================================ */
