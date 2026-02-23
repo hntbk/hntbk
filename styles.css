@@ -204,6 +204,20 @@ img {
     font-weight: 500;
 }
 
+.news-instructor {
+    margin-top: var(--sp-3);
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+    line-height: var(--lh-base);
+}
+
+.news-instructor-label {
+    display: block;
+    font-weight: 500;
+    color: var(--c-text);
+    margin-bottom: var(--sp-1);
+}
+
 .news-cta {
     margin-top: var(--sp-3);
 }
